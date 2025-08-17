@@ -18,7 +18,6 @@ class TopAgentsListAPIView(generics.ListAPIView):
     queryset = Profile.objects.filter(top_agent=True)
     serializer_class = ProfileSerializer
 
-
 class GetProfileAPIView(APIView):
     permission_classes = [permissions.IsAuthenticated]
     renderer_classes = [ProfileJSONRenderer]
@@ -28,7 +27,6 @@ class GetProfileAPIView(APIView):
         user_profile = Profile.objects.get(user=user)
         serializer = ProfileSerializer(user_profile, context={"request": request})
         return Response(serializer.data, status=status.HTTP_200_OK)
-
 
 class UpdateProfileAPIView(APIView):
     permission_classes = [permissions.IsAuthenticated]
