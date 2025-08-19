@@ -53,6 +53,7 @@ LOCAL_APPS = [
     "apps.profiles",
     "apps.ratings",
     "apps.properties",
+    "apps.inquiries",
 ]
 
 THIRD_PARTY_APPS = [

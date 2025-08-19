@@ -4,7 +4,7 @@ from rest_framework.views import APIView
 
 from .exceptions import NotYourProfile, ProfileNotFound
 from .models import Profile
-from .renderers import ProfileJSONRenderer
+from rest_framework.renderers import JSONRenderer
 from .serializers import ProfileSerializer, UpdateProfileSerializer
 
 
@@ -20,7 +20,7 @@ class TopAgentsListAPIView(generics.ListAPIView):
 
 class GetProfileAPIView(APIView):
     permission_classes = [permissions.IsAuthenticated]
-    renderer_classes = [ProfileJSONRenderer]
+    renderer_classes = [JSONRenderer]
 
     def get(self, request):
         user = self.request.user
@@ -30,7 +30,7 @@ class GetProfileAPIView(APIView):
 
 class UpdateProfileAPIView(APIView):
     permission_classes = [permissions.IsAuthenticated]
-    renderer_classes = [ProfileJSONRenderer]
+    renderer_classes = [JSONRenderer]
 
     serializer_class = UpdateProfileSerializer
 
