@@ -14,3 +14,10 @@ isort==6.0.1
 djoser==2.3.1
 djangorestframework-simplejwt==5.5.0
 PyJWT==2.9.0
+redis==6.0.0
+celery==5.5.3
+flower==2.0.1
+django-celery-email==3.0.0
+argh==0.31.3
+pyYAML==6.0.2
+watchdog==6.0.0
